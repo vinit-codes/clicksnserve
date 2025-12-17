@@ -1,13 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clicks & Serve - Premium Restaurant Marketing Agency Website
 
-## Getting Started
+A high-conversion sales funnel and lead generation website for Clicks & Serve, a premium restaurant marketing agency. Built with Next.js 14, Tailwind CSS, and Framer Motion for a luxury dark-mode experience.
 
-First, run the development server:
+## 🚀 Live Demo
+
+Visit [http://localhost:3000](http://localhost:3000) to see the website in action.
+
+## ✨ Features
+
+### Design & User Experience
+
+- **Luxury Dark Mode Theme** - Deep blacks with gold (#FFD700) and electric blue accents
+- **Cinematic Animations** - Smooth Framer Motion scroll effects and reveal animations
+- **Glassmorphism UI** - Modern frosted glass effects on cards and components
+- **Responsive Design** - Perfect experience across all devices
+- **Sticky Navigation** - Glass-effect navbar with smooth scroll behavior
+- **Floating CTA Button** - Persistent call-to-action that appears on scroll
+
+### Page Sections
+
+1. **Hero Section** - Bold headline with animated background and social proof
+2. **Problem/Agitation Section** - Side-by-side comparison of agencies
+3. **Pricing Section** - 3 beautiful pricing tiers (₹20k, ₹25k, ₹30k/month)
+4. **Website Service** - Digital infrastructure add-on (₹15k one-time)
+5. **Contact Form** - Lead qualification with required fields
+6. **Footer** - Social links and navigation
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 14 (App Router)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Fonts:** Inter & Oswald
+
+## 📦 Getting Started
+
+Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 # or
 pnpm dev
 # or
