@@ -3,7 +3,6 @@ import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingCards from "@/components/PricingCards";
-import WebsiteSection from "@/components/WebsiteSection";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import StickyFloatingCTA from "@/components/StickyFloatingCTA";
@@ -16,7 +15,7 @@ export default function Home() {
       <ProblemSection />
       <FeaturesSection />
       <PricingCards />
-      <WebsiteSection />
+ 
       <ContactForm />
       <Footer />
       <StickyFloatingCTA />

@@ -25,6 +25,11 @@ export const metadata: Metadata = {
     description: "The Tier-1 Growth Agency for Cafes, Restaurants, & Hotels",
     type: "website",
   },
+  icons: {
+    icon: '/click.jpg',
+    shortcut: '/click.jpg',
+    apple: '/click.jpg',
+  },
 };
 
 export default function RootLayout({
