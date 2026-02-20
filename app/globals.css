@@ -49,3 +49,114 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+/* Desktop-specific optimizations */
+@media (min-width: 1024px) {
+  /* Better typography scale for desktop */
+  .desktop-hero-text {
+    font-size: clamp(4rem, 8vw, 10rem);
+    line-height: 0.9;
+  }
+  
+  .desktop-section-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    line-height: 1.1;
+  }
+  
+  /* Desktop container improvements */
+  .desktop-container {
+    max-width: 1400px;
+    padding: 0 3rem;
+  }
+  
+  /* Better card layouts for desktop */
+  .desktop-card-grid {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Desktop navbar improvements */
+  .desktop-nav {
+    padding: 1.5rem 3rem;
+  }
+  
+  /* Desktop button improvements */
+  .desktop-cta {
+    padding: 1rem 2rem;
+    font-size: 1.125rem;
+    min-width: 200px;
+  }
+  
+  /* Desktop form improvements */
+  .desktop-form {
+    max-width: 800px;
+    padding: 3rem;
+  }
+  
+  .desktop-form-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  
+  /* Desktop hover effects */
+  .desktop-hover-lift:hover {
+    transform: translateY(-8px);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Desktop spacing improvements */
+  .desktop-section-padding {
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+  }
+  
+  /* Desktop text improvements */
+  .desktop-body-text {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+  
+  /* Desktop grid improvements */
+  .desktop-features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3rem;
+  }
+}
+
+/* Ultra-wide desktop optimizations */
+@media (min-width: 1536px) {
+  .desktop-container {
+    max-width: 1600px;
+    padding: 0 4rem;
+  }
+  
+  .desktop-hero-text {
+    font-size: clamp(6rem, 10vw, 12rem);
+  }
+  
+  .desktop-features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop-only animations */
+@media (min-width: 1024px) {
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    33% { transform: translateY(-10px) rotate(1deg); }
+    66% { transform: translateY(5px) rotate(-1deg); }
+  }
+  
+  .desktop-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .desktop-glow {
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .desktop-glow:hover {
+    box-shadow: 0 0 60px rgba(255, 215, 0, 0.5);
+  }
+}

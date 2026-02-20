@@ -9,20 +9,20 @@ export default function Hero() {
       {/* Animated Background */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-black via-[#0a0a0a] to-black"></div>
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-[120px] animate-pulse"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00D9FF]/10 rounded-full blur-[120px] animate-pulse delay-1000"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-[120px] animate-pulse desktop-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#00D9FF]/10 rounded-full blur-[120px] animate-pulse delay-1000 desktop-float"></div>
         
         {/* Grid Pattern */}
-        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px]"></div>
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:100px_100px] lg:bg-[size:150px_150px]"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+      <div className="relative z-10 desktop-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="space-y-8"
+          className="space-y-8 lg:space-y-12"
         >
           {/* Badge */}
           <motion.div
@@ -32,7 +32,7 @@ export default function Hero() {
             className="inline-block"
           >
             <br />
-            <div className="glass px-4 py-2 rounded-full text-sm text-[#FFD700] border border-[#FFD700]/30">
+            <div className="glass px-4 py-2 lg:px-6 lg:py-3 rounded-full text-sm lg:text-base text-[#FFD700] border border-[#FFD700]/30 desktop-glow">
               🚀 Restaurant Growth Agency
             </div>
           </motion.div>
@@ -42,7 +42,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
-            className="font-['Oswald'] text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold tracking-tight"
+            className="font-['Oswald'] text-6xl sm:text-7xl md:text-8xl lg:text-9xl xl:text-[10rem] font-bold tracking-tight desktop-hero-text"
           >
             <span className="block text-white">Grow Your</span>
             <span className="block bg-gradient-to-r from-[#FFD700] to-[#FFC700] bg-clip-text text-transparent">
@@ -55,10 +55,10 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}
-            className="text-xl sm:text-2xl md:text-3xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white/70 max-w-4xl lg:max-w-6xl mx-auto leading-relaxed desktop-body-text"
           >
             Professional content creation and marketing strategy
-            <br />
+            <br className="hidden lg:block" />
             for Cafes, Restaurants, & Hotels.
           </motion.p>
 
@@ -67,13 +67,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-8"
+            className="flex flex-col sm:flex-row items-center justify-center gap-4 lg:gap-6 pt-8 lg:pt-12"
           >
             <motion.a
               href="#contact"
               whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 215, 0, 0.5)" }}
               whileTap={{ scale: 0.95 }}
-              className="group bg-[#FFD700] text-black px-8 py-4 rounded-lg font-bold text-lg flex items-center gap-2 hover:bg-[#FFC700] transition-all shadow-lg shadow-[#FFD700]/20"
+              className="group bg-[#FFD700] text-black px-8 py-4 lg:px-10 lg:py-5 rounded-lg font-bold text-lg lg:text-xl flex items-center gap-2 hover:bg-[#FFC700] transition-all shadow-lg shadow-[#FFD700]/20 desktop-cta desktop-hover-lift"
             >
               Book Strategy Session
               <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -83,10 +83,10 @@ export default function Hero() {
               href="#pricing"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="group glass px-8 py-4 rounded-lg font-semibold text-lg text-white border-2 border-white/20 hover:border-[#FFD700]/50 transition-all flex items-center gap-2"
+              className="group glass px-8 py-4 lg:px-10 lg:py-5 rounded-lg font-semibold text-lg lg:text-xl text-white border-2 border-white/20 hover:border-[#FFD700]/50 transition-all flex items-center gap-2 desktop-hover-lift"
             >
               View Pricing
-              <Play size={20} className="group-hover:translate-x-1 transition-transform" />
+              <Play size={20} className="group-hover:translate-x-1 transition-transform lg:size-6" />
             </motion.a>
           </motion.div>
 
@@ -105,9 +105,9 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
-          className="w-6 h-10 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
+          className="w-6 h-10 lg:w-7 lg:h-12 border-2 border-white/30 rounded-full flex items-start justify-center p-2"
         >
-          <motion.div className="w-1 h-2 bg-[#FFD700] rounded-full"></motion.div>
+          <motion.div className="w-1 h-2 lg:w-1.5 lg:h-3 bg-[#FFD700] rounded-full"></motion.div>
         </motion.div>
       </motion.div>
     </section>

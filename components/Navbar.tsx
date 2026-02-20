@@ -27,13 +27,13 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="desktop-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 lg:h-24 desktop-nav">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="text-2xl font-bold"
+              className="text-2xl lg:text-3xl font-bold desktop-glow"
             >
               <span className="font-['Oswald'] text-white">Clicks &</span>
               <span className="font-['Oswald'] text-[#FFD700]"> Serve</span>
@@ -41,22 +41,22 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-12">
+          <div className="hidden md:flex items-center gap-12 lg:gap-16">
             <Link
               href="#pricing"
-              className="text-white/80 hover:text-white transition-colors text-[15px] font-medium"
+              className="text-white/80 hover:text-white transition-colors text-[15px] lg:text-base font-medium desktop-hover-lift"
             >
               Pricing
             </Link>
             <Link
               href="#services"
-              className="text-white/80 hover:text-white transition-colors text-[15px] font-medium"
+              className="text-white/80 hover:text-white transition-colors text-[15px] lg:text-base font-medium desktop-hover-lift"
             >
               Services
             </Link>
             <Link
               href="#contact"
-              className="text-white/80 hover:text-white transition-colors text-[15px] font-medium"
+              className="text-white/80 hover:text-white transition-colors text-[15px] lg:text-base font-medium desktop-hover-lift"
             >
               Contact
             </Link>
@@ -64,7 +64,7 @@ export default function Navbar() {
               href="#contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-[#FFD700] text-black px-8 py-3 rounded-lg font-semibold hover:bg-[#FFC700] transition-colors ml-4"
+              className="bg-[#FFD700] text-black px-8 py-3 lg:px-10 lg:py-4 rounded-lg font-semibold hover:bg-[#FFC700] transition-colors ml-4 lg:ml-6 desktop-cta desktop-glow"
             >
               Book Strategy Session
             </motion.a>
@@ -72,7 +72,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="md:hidden text-white lg:text-xl"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

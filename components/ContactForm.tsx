@@ -18,25 +18,25 @@ export default function ContactForm() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-32 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden">
+    <section id="contact" ref={ref} className="py-32 lg:py-40 px-4 sm:px-6 lg:px-8 bg-black relative overflow-hidden desktop-section-padding">
       {/* Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#FFD700]/10 rounded-full blur-[150px]"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] lg:w-[800px] lg:h-[800px] bg-[#FFD700]/10 rounded-full blur-[150px]"></div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
+      <div className="desktop-container max-w-4xl lg:max-w-5xl mx-auto relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 lg:mb-24"
         >
-          <h2 className="font-['Oswald'] text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="font-['Oswald'] text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-4 lg:mb-6 desktop-section-title">
             Let's Grow Your
             <span className="text-[#FFD700]"> Restaurant</span>
           </h2>
-          <p className="text-lg text-white/60 max-w-2xl mx-auto">
+          <p className="text-lg lg:text-xl xl:text-2xl text-white/60 max-w-2xl lg:max-w-4xl mx-auto desktop-body-text">
             Tell us about your restaurant and we'll get back to you within 24 hours.
           </p>
         </motion.div>
@@ -46,7 +46,7 @@ export default function ContactForm() {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass p-6 sm:p-8 md:p-10 rounded-2xl border border-white/10"
+          className="glass p-6 sm:p-8 md:p-10 lg:p-12 xl:p-16 rounded-2xl border border-white/10 desktop-form desktop-hover-lift"
         >
           {submitted ? (
             <motion.div
