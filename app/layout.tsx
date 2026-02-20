@@ -26,9 +26,28 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: '/click.jpg',
+    icon: [
+      {
+        url: '/click.jpg',
+        sizes: '32x32',
+        type: 'image/jpeg',
+      },
+      {
+        url: '/click.jpg',
+        sizes: '16x16',
+        type: 'image/jpeg',
+      }
+    ],
     shortcut: '/click.jpg',
     apple: '/click.jpg',
+    other: [
+      {
+        rel: 'icon',
+        url: '/click.jpg',
+        sizes: '32x32',
+        type: 'image/jpeg',
+      },
+    ],
   },
 };
 
@@ -39,6 +58,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="icon" type="image/jpeg" href="/click.jpg" />
+        <link rel="shortcut icon" type="image/jpeg" href="/click.jpg" />
+        <link rel="apple-touch-icon" href="/click.jpg" />
+      </head>
       <body
         className={`${inter.variable} ${oswald.variable} antialiased`}
       >
