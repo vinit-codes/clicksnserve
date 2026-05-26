@@ -9,13 +9,12 @@ import StickyFloatingCTA from "@/components/StickyFloatingCTA";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black text-white font-sans selection:bg-emerald-500/30">
       <Navbar />
       <Hero />
       <ProblemSection />
       <FeaturesSection />
       <PricingCards />
- 
       <ContactForm />
       <Footer />
       <StickyFloatingCTA />

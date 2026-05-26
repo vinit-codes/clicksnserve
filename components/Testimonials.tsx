@@ -3,131 +3,102 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Star, Quote } from "lucide-react";
-
-const testimonials = [
-  {
-    name: "Rajesh Kumar",
-    role: "Owner, Spice Garden Restaurant",
-    image: "👨‍🍳",
-    rating: 5,
-    text: "Working with Clicks & Serve has been great. Their fresh approach to content and marketing is exactly what we needed. Professional team that delivers on their promises.",
-    result: "More Weekend Bookings"
-  },
-  {
-    name: "Priya Sharma",
-    role: "Director, Urban Bites Cafe",
-    image: "👩‍💼",
-    rating: 5,
-    text: "Finally, an agency that understands the restaurant business. They're helping us build our social media presence the right way. Excited to see where this goes!",
-    result: "Growing Presence"
-  },
-  {
-    name: "Amit Patel",
-    role: "Founder, The Grand Thali",
-    image: "👨‍💻",
-    rating: 5,
-    text: "Great experience working with the Clicks & Serve team. They're responsive, creative, and understand what restaurants need to succeed online.",
-    result: "Happy Partner"
-  }
-];
+import { PlayCircle } from "lucide-react";
 
 export default function Testimonials() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section ref={ref} className="py-32 px-4 sm:px-6 lg:px-8 bg-[#0a0a0a] relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/4 w-96 h-96 bg-[#FFD700]/5 rounded-full blur-[120px]"></div>
-        <div className="absolute bottom-1/2 right-1/4 w-96 h-96 bg-[#00D9FF]/5 rounded-full blur-[120px]"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto relative z-10">
+    <section ref={ref} className="py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-black relative border-b border-zinc-800 w-full overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto relative z-10">
+        
         {/* Section Header */}
-        <motion.div
+        <motion.header
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-20"
         >
-          <h2 className="font-['Oswald'] text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6">
-            Real Results from
-            <br />
-            <span className="text-[#FFD700]">Real Restaurants</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 md:mb-6 tracking-tight leading-tight">
+            Proof of <span className="text-zinc-500">Concept</span>
           </h2>
-          <p className="text-xl text-white/60 max-w-3xl mx-auto">
-            Don&apos;t just take our word for it. Here&apos;s what our partners have to say.
+          <p className="text-lg md:text-xl text-zinc-400 max-w-3xl mx-auto font-light">
+            Data speaks louder than promises. See the clinical framework in action.
           </p>
-        </motion.div>
+        </motion.header>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -10 }}
-              className="glass p-8 rounded-2xl border border-white/10 hover:border-[#FFD700]/30 transition-all relative"
-            >
-              {/* Quote Icon */}
-              <div className="absolute top-6 right-6 opacity-20">
-                <Quote size={48} className="text-[#FFD700]" />
-              </div>
-
-              <div className="relative z-10">
-                {/* Stars */}
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={16} fill="#FFD700" className="text-[#FFD700]" />
-                  ))}
-                </div>
-
-                {/* Testimonial Text */}
-                <p className="text-white/80 mb-6 leading-relaxed">
-                  &quot;{testimonial.text}&quot;
-                </p>
-
-                {/* Result Badge */}
-                <div className="inline-block mb-6 px-4 py-2 bg-[#FFD700]/10 border border-[#FFD700]/30 rounded-full">
-                  <span className="text-[#FFD700] font-semibold text-sm">
-                    {testimonial.result}
-                  </span>
-                </div>
-
-                {/* Author */}
-                <div className="flex items-center gap-4 pt-6 border-t border-white/10">
-                  <div className="text-4xl">{testimonial.image}</div>
-                  <div>
-                    <div className="text-white font-bold">{testimonial.name}</div>
-                    <div className="text-white/60 text-sm">{testimonial.role}</div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <p className="text-white/60 mb-6">Want results like these?</p>
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(255, 215, 0, 0.5)" }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-block bg-[#FFD700] text-black px-8 py-4 rounded-lg font-bold text-lg hover:bg-[#FFC700] transition-all shadow-lg shadow-[#FFD700]/20"
+        {/* Split Layout */}
+        <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center w-full">
+          
+          {/* Left Column: Copy */}
+          <motion.article
+            initial={{ opacity: 0, x: -30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-6 md:space-y-8 w-full"
           >
-            Start Your Transformation
-          </motion.a>
-        </motion.div>
+            <div className="inline-block bg-zinc-900 border border-zinc-800 px-3 md:px-4 py-1.5 md:py-2 rounded-full text-zinc-400 text-xs md:text-sm font-medium tracking-wide">
+              CASE STUDY: AESTHETICS CLINIC
+            </div>
+            
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white leading-tight">
+              50 Premium Aesthetic Bookings in 7 Days.
+            </h3>
+            
+            <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-light">
+              By deploying our local intent framework combined with surgical meta targeting, we shifted a struggling clinic from acquiring low-intent queries to completely booking out their high-margin procedure calendar.
+            </p>
+            
+            <ul className="space-y-3 md:space-y-4 pt-2 md:pt-4 w-full">
+              <li className="flex items-start md:items-center gap-3 md:gap-4 text-zinc-300 text-sm md:text-base">
+                <span className="text-emerald-400 font-bold ml-1 md:ml-2 mt-0.5 md:mt-0 shrink-0">✓</span>
+                <span className="leading-snug">Zero manual follow-up required by the clinic</span>
+              </li>
+              <li className="flex items-start md:items-center gap-3 md:gap-4 text-zinc-300 text-sm md:text-base">
+                <span className="text-emerald-400 font-bold ml-1 md:ml-2 mt-0.5 md:mt-0 shrink-0">✓</span>
+                <span className="leading-snug">$64 Cost-Per-Consultation for Hair Transplants</span>
+              </li>
+              <li className="flex items-start md:items-center gap-3 md:gap-4 text-zinc-300 text-sm md:text-base">
+                <span className="text-emerald-400 font-bold ml-1 md:ml-2 mt-0.5 md:mt-0 shrink-0">✓</span>
+                <span className="leading-snug">82% Show-up Rate maintained through automated nurturing</span>
+              </li>
+            </ul>
+          </motion.article>
+
+          {/* Right Column: Browser Mockup Container */}
+          <motion.aside
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="w-full max-w-full overflow-hidden"
+          >
+            <div className="bg-zinc-900 rounded-xl border border-zinc-800 overflow-hidden shadow-2xl relative w-full">
+              {/* Browser Header */}
+              <div className="bg-black border-b border-zinc-800 px-3 md:px-4 py-2.5 md:py-3 flex items-center gap-2 w-full">
+                <div className="flex gap-1 md:gap-1.5 shrink-0">
+                  <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-zinc-700"></div>
+                  <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-zinc-700"></div>
+                  <div className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-zinc-700"></div>
+                </div>
+                <div className="ml-2 md:ml-4 bg-zinc-800/50 rounded text-[10px] md:text-xs text-zinc-500 px-2 md:px-3 py-1 font-mono flex-1 text-center truncate mx-auto">
+                  campaigns.meta.com/results
+                </div>
+              </div>
+              
+              {/* Mock Video Embed / Screen Container */}
+              <div className="aspect-video bg-zinc-950 flex flex-col items-center justify-center relative group cursor-pointer w-full">
+                <div className="absolute inset-0 bg-linear-to-t from-black/80 via-transparent to-transparent z-10" />
+                <PlayCircle className="text-zinc-500 group-hover:text-white transition-colors z-20 w-12 h-12 md:w-16 md:h-16" strokeWidth={1} />
+                <p className="text-zinc-500 mt-2 md:mt-4 text-xs md:text-sm font-medium tracking-wide z-20 group-hover:text-zinc-300 transition-colors">WATCH SYSTEM BREAKDOWN</p>
+                <div className="absolute bottom-3 left-3 md:bottom-4 md:left-4 z-20">
+                  <span className="bg-black/50 backdrop-blur text-white text-[10px] md:text-xs px-2 py-1 rounded">04:20</span>
+                </div>
+              </div>
+            </div>
+          </motion.aside>
+
+        </div>
       </div>
     </section>
   );
