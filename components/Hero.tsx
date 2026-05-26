@@ -31,7 +31,7 @@ export default function Hero() {
             className="inline-block"
           >
             <div className="bg-zinc-900/50 backdrop-blur-sm px-4 py-2 lg:px-6 lg:py-3 rounded-full text-sm lg:text-base text-zinc-300 border border-zinc-800 shadow-[0_0_15px_rgba(16,185,129,0.1)]">
-              ✨ Premium Clinical Performance Marketing
+        
             </div>
           </motion.div>
 
